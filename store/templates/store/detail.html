@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %} {% for product in products %}
+<div class="products">
+
+    <ng-container *ngFor="let product of products">
+        <div class="product">
+
+            <div class="product-description">
+                <p class="product-name">{{ product.name }}</p>
+                <p class="product-budget">{{ product.name }}</p>
+                <p class="product-quantity">{{ product.name }}</p>
+                <p class="card-text">{{ product.description }}</p>
+                <a href=" {% url 'postuler' %} " class="btn btn-dark">Postuler Une demande</a>
+            </div>
+        </div>
+    </ng-container>
+</div>
+{% endfor %}{% endblock %}

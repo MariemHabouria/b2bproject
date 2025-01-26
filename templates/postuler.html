@@ -1,0 +1,11 @@
+ {% extends 'base.html' %} {% block content %} {% load static %}
+<link href="{% static 'css/postuler.css' %}" rel="stylesheet" />
+<h2 class="drop-title">Ajouter fiche produit</h2>
+<form action="{% url 'postuler' product.slug %}" class="drop-container" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+
+
+    <button type="submit">postuler la demande</button>
+</form>
+{% endblock%}

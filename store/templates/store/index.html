@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet" />
+<h1 style="color:rgb(32, 7, 100)">Des Annonces : </h1>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-3">
+        <div class="card">
+
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                    <span style="color:rgb(255, 255, 255)"> Nom :</span>
+                    <div id=" aa{{ product.id }} " class="card-title " style="color:rgb(255, 255, 255) "> {{ product.name }} </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                    <span style="color:rgb(255, 255, 255)"> Budget : </span>
+
+                    <div id="aa{{ product.budget }} " class="card-text " style="color:rgb(255, 255, 255) ">{{ product.budget }} TND</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                    <span style="color:rgb(255, 255, 255)"> Qunatité : </span>
+                    <div id="aa{{ product.quantity }} " class="card-text " style="color:rgb(255, 255, 255) ">{{ product.quantity }}</div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                    <span style="color:rgb(255, 255, 255)"> Catégory : </span>
+                    <div id="aa{{ product.category }} " class="card-text " style="color:rgb(255, 255, 255) ">{{ product.category }}</div>
+                </div>
+
+                <div class="d-flex justify-content-center ">
+
+                    <a class="nav-link btn btn-warning text-dark  " href="{% url 'postuler' %}">Postuler une demande</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
